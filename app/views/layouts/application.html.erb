@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Goat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav_button"><%= link_to "Weeks", weeks_path %></div>
+      <div class="nav_button"><%= link_to "Days", days_path %></div>
+      <div class="nav_button"><%= link_to "Notes", notes_path %></div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

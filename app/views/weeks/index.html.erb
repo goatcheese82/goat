@@ -1,0 +1,12 @@
+<div>
+
+    <%= link_to 'Start New Week', new_week_path %>
+</div>
+
+<div>
+<% @weeks.each do |w| %>
+<div class="date_link">
+<%= link_to "#{w.start_day}", week_path(w)  %>
+</div>
+<% end %>
+</div>

@@ -11,6 +11,7 @@ class WeeksController < ApplicationController
     end
 
     def create
+        binding.pry
         @week = Week.create!(week_params)
         redirect_to week_path(@week)
     end

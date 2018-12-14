@@ -1,12 +1,23 @@
 <div>
-
-    <%= link_to 'Start New Week', new_week_path %>
+<%= form_for @week do |nw| %>
+    <% if @week.errors.any? %>
+        <% @week.errors.full_messages.each do |message| %>
+            <%= message %>
+        <% end %>
+    <% end %>
+    <%= nw.label :start_day %>
+    <%= nw.date_field :start_day %>
+    <%= nw.submit %>
+<% end %>
 </div>
 
 <div>
-<% @weeks.each do |w| %>
-<div class="date_link">
-<%= link_to "#{w.start_day}", week_path(w)  %>
+    <% @weeks.each do |w| %>
+        <div class="date_link">
+        <%= link_to "#{w.start_day}", week_path(w)  %>
+    
+        </div>
+    <% end %>
 </div>
-<% end %>
-</div>
+
+<div>

@@ -1,0 +1,20 @@
+<div id="daily">
+    <%= @today.date %>
+    <%= @today.title %>
+    <div id="today_notes">
+        <% @today.notes.each do |tn| %>
+        <%= tn.content %>
+        <% end %>
+    </div>
+</div>
+
+<div id="weekly">
+    <%= @week.start_day %>
+    <div id="week_days">
+        <%@week.days.each do |wd| %>
+            <%= wd.title %>
+            <%= wd.date %>
+        <% end %>
+    </div>
+
+</div>

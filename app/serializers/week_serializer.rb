@@ -1,3 +1,3 @@
 class WeekSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :start_day
 end

@@ -13,10 +13,12 @@ $(function(){
             method: "POST"
         })
         .success(function(json){
-            debugger
-            $("#ajax_links").html("");
-            $("#ajax_links").html(json.week.start_day)
+            $(':input[type="submit"]').prop('disabled', false)
+            $("#ajax_links").append(json.start_day + '<br>')
+            $("#new_week").trigger("reset")
         })
+;
+        
     
     })
 })

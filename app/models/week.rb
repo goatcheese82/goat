@@ -15,7 +15,6 @@ class Week < ApplicationRecord
     end
 
     def current_week
-        @today.week
     end
 
 end

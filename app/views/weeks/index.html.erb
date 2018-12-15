@@ -14,7 +14,9 @@
 <div>
     <% @weeks.each do |w| %>
         <div class="date_link">
-        <%= link_to "#{w.start_day}", week_path(w)  %>
+            <%= link_to "#{w.start_day}", week_path(w)  %>
+            <div id="ajax_links">
+            </div>
     
         </div>
     <% end %>

@@ -4,7 +4,7 @@ $(function(){
         let action = $form.attr("action");
         let params = $form.serialize()
 
-        //e.preventDefault()
+        e.preventDefault()
 
         $.ajax({
             url: action,
@@ -13,12 +13,10 @@ $(function(){
             method: "POST"
         })
         .success(function(json){
-            $(".question_content").html("");
-            $(".question").html(json.question.content)
+            debugger
+            $("#ajax_links").html("");
+            $("#ajax_links").html(json.week.start_day)
         })
-        
-        
-        
-        e.preventDefault()
+    
     })
 })

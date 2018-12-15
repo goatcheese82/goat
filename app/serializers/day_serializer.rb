@@ -1,3 +1,4 @@
 class DaySerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :date, :title
+  belongs_to :week
 end

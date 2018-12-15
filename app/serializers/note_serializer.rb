@@ -1,3 +1,4 @@
 class NoteSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :content
+  belongs_to :day
 end

@@ -17,8 +17,23 @@ $(function(){
             $("#ajax_links").append(json.start_day + '<br>')
             $("#new_week").trigger("reset")
         })
-;
-        
-    
-    })
+    });
+});
+
+$(function(){
+    $("a.date_link").on("click", function (e){
+
+        $.get(this.href).success(function(json){
+            let $ul = $("#week_info_" + json.id)
+            $ul.html("")
+
+            //debugger
+
+            json.days.forEach(function(day){
+                $ul.append('<li>' + day.title + '</li>')
+            })
+        })
+
+        e.preventDefault()
+    });
 })

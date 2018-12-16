@@ -14,7 +14,7 @@ class WeeksController < ApplicationController
         @week = Week.create(week_params)
         if @week.save
             respond_to do |f|
-                #binding.pry
+
                 f.html { redirect_to weeks_path }
                 f.json { render :json => @week }
 
@@ -26,10 +26,7 @@ class WeeksController < ApplicationController
 
     def show
         @week = Week.find(params[:id])
-        respond_to do |f|
-            f.html { render week_path(@week) }
-            f.json {render :json => @week }
-        end
+        render :json => @week
     end
 
     def update

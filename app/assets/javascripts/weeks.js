@@ -25,13 +25,17 @@ $(function(){
 
         $.get(this.href).success(function(json){
             let $ul = $("#week_info_" + json.id)
-            $ul.html("")
 
             //debugger
 
+            if($ul[0].innerHTML == '') {
+
             json.days.forEach(function(day){
                 $ul.append('<li>' + day.title + '</li>')
-            })
+            })}
+            else {
+                $ul.html("")
+            }
         })
 
         e.preventDefault()

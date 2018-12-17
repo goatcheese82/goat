@@ -1,8 +1,16 @@
-<% @week.days.each do |wd| %>
+<%# @week.days.each do |wd| %>
 <div class="day_title">
-<%= wd.title %>
+<%#= wd.title %>
 </div>
 <div class="day_date">
-<%= wd.date %>
+<%#= wd.date %>
 </div>
+<%# end %>
+
+
+<div class="weekday">
+<%= @week.days.first.title %>
+<% @week.days.first.notes.each do |n| %>
+<%= n.content %>
 <% end %>
+</div>

@@ -17,9 +17,8 @@
             <%= link_to "#{w.start_day}", week_path(w), :class => "date_link"  %>
         </div>
         <div id='week_info_<%= w.id%>'>
-            <ul>
-            </ul>
         </div>
+        <%= link_to 'Go to Week', week_path(w) %>
     <% end %>
     <div id="ajax_links">
     </div>

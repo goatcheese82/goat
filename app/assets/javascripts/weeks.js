@@ -24,17 +24,18 @@ $(function(){
     $("a.date_link").on("click", function (e){
 
         $.get(this.href).success(function(json){
-            let $ul = $("#week_info_" + json.id)
+            
+            let $weekday = $("#week_info_" + json.id )
 
             //debugger
 
-            if($ul[0].innerHTML == '') {
-
-            json.days.forEach(function(day){
-                $ul.append('<li>' + day.title + '</li>')
-            })}
+            if($weekday[0].innerHTML == "") {
+                json.days.forEach(function(day){
+                    $weekday.append('<div class="weekday">' + day.title + '</div>')
+                })      
+            }
             else {
-                $ul.html("")
+                $weekday.html("")
             }
         })
 

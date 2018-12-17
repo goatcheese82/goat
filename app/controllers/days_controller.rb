@@ -15,7 +15,7 @@ class DaysController < ApplicationController
     def show
         @day = Day.find(params[:id])
         respond_to do |f|
-            f.html {redirect_to day_path(@day)}
+            f.html {}
             f.json {render :json => @day }
         end
     end

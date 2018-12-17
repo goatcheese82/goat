@@ -26,7 +26,10 @@ class WeeksController < ApplicationController
 
     def show
         @week = Week.find(params[:id])
-        render :json => @week
+        respond_to do |f|
+            f.json {render :json => @week}
+            f.html {}
+        end
     end
 
     def update

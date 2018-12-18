@@ -1,16 +1,13 @@
-<%# @week.days.each do |wd| %>
-<div class="day_title">
-<%#= wd.title %>
-</div>
-<div class="day_date">
-<%#= wd.date %>
-</div>
-<%# end %>
-
-
 <div class="weekday">
-<%= @week.days.first.title %>
-<% @week.days.first.notes.each do |n| %>
-<%= n.content %>
-<% end %>
+    <% @day = @week.days.first %>
+    <div class="day_title">
+    <%= @day.title %>
+    </div>
+    <div class="day_date">
+    <%= @day.date %>
+    </div>
+    <% @week.days.first.notes.each do |n| %>
+        <%= n.content %>
+    <% end %>
+    <%= link_to '>', week_path(@week), :class => "week_path" %>
 </div>

@@ -1,5 +1,6 @@
 class DaysController < ApplicationController
     before_action :set_days
+    before_action :set_week
 
     def index
     end
@@ -14,10 +15,7 @@ class DaysController < ApplicationController
 
     def show
         @day = Day.find(params[:id])
-        respond_to do |f|
-            f.html {}
-            f.json {render :json => @day }
-        end
+        render json: @day
     end
 
     def edit
@@ -38,6 +36,10 @@ class DaysController < ApplicationController
 
     def set_day
         @day = Day.find(params[:id])
+    end
+
+    def set_week
+        @week = Week.find(params[:week_id])
     end
 
     def day_params

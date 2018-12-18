@@ -13,7 +13,8 @@ $(function() {
                 $current_day =0
                 $current_day++
             }
-            $today = json.days[$current_day]
+            $today = {days: json.days[$current_day], notes: json.days[$current_day].notes}
+            //json.days[$current_day]
             $(".day_title").html(json.days  [$current_day].title)
 
             $(".day_date").html(json.days[$current_day].date)

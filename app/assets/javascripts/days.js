@@ -13,10 +13,16 @@ $(function() {
                 $current_day =0
                 $current_day++
             }
+            $today = json.days[$current_day]
             $(".day_title").html(json.days  [$current_day].title)
 
             $(".day_date").html(json.days[$current_day].date)
-            debugger
+
+            $(".day_notes").html("")
+
+            $today.notes.forEach(function(i){
+                if(i.content)
+                    $(".day_notes").append('<li>' + i.content + '</li>')})
         })
         e.preventDefault()
     })

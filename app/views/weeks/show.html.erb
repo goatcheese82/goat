@@ -6,8 +6,10 @@
     <div class="day_date">
     <%= @day.date %>
     </div>
-    <% @week.days.first.notes.each do |n| %>
+    <div class="day_notes">
+    <% @day.notes.each do |n| %>
         <%= n.content %>
     <% end %>
+    </div>
     <%= link_to '>', week_path(@week), :class => "week_path" %>
 </div>
